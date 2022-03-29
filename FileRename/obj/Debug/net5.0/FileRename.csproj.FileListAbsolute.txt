@@ -1,0 +1,16 @@
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerename\FileRename\bin\Debug\net5.0\FileRename.exe
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerename\FileRename\bin\Debug\net5.0\FileRename.deps.json
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerename\FileRename\bin\Debug\net5.0\FileRename.runtimeconfig.json
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerename\FileRename\bin\Debug\net5.0\FileRename.runtimeconfig.dev.json
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerename\FileRename\bin\Debug\net5.0\FileRename.dll
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerename\FileRename\bin\Debug\net5.0\ref\FileRename.dll
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerename\FileRename\bin\Debug\net5.0\FileRename.pdb
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerename\FileRename\obj\Debug\net5.0\FileRename.csproj.AssemblyReference.cache
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerename\FileRename\obj\Debug\net5.0\FileRename.GeneratedMSBuildEditorConfig.editorconfig
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerename\FileRename\obj\Debug\net5.0\FileRename.AssemblyInfoInputs.cache
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerename\FileRename\obj\Debug\net5.0\FileRename.AssemblyInfo.cs
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerename\FileRename\obj\Debug\net5.0\FileRename.csproj.CoreCompileInputs.cache
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerename\FileRename\obj\Debug\net5.0\FileRename.dll
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerename\FileRename\obj\Debug\net5.0\ref\FileRename.dll
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerename\FileRename\obj\Debug\net5.0\FileRename.pdb
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerename\FileRename\obj\Debug\net5.0\FileRename.genruntimeconfig.cache
