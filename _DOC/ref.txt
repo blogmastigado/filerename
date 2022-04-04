@@ -5,3 +5,5 @@ https://www.codegrepper.com/code-examples/csharp/.net+core+get+current+directory
 fonte: fatal: write failure on 'stdout': Bad file descriptor
 
 Correção: git config --global pack.windowMemory "32m"
+
+https://devconnected.com/how-to-change-git-remote-origin/

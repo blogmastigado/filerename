@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace FileRename.Aplicacao
 {
-    public class GestorDeArquivo
+    public static class GestorDeArquivo
     {
-        public List<String> ObterTodosOsNomesDeArquivosDeUmDiretorio(String nome_diretorio)
+        public static List<String> ObterTodosOsNomesDeArquivosDeUmDiretorio(String nome_diretorio)
         {
             // Inicializa uma lista de String para guardar os nomes dos arquivos
             List<String> nomes_de_arquivos = new List<String>();
@@ -42,7 +42,7 @@ namespace FileRename.Aplicacao
             return nomes_de_arquivos;
         }
 
-        public string ObterNomeDoDiretorioAtual()
+        public static string ObterNomeDoDiretorioAtual()
         {
             string nome_diretorio = "";
 
@@ -58,7 +58,7 @@ namespace FileRename.Aplicacao
             return nome_diretorio;
         }
 
-        public void ExibirNomesDosArquivosDoDiretorioAtual()
+        public static void ExibirNomesDosArquivosDoDiretorioAtual()
         {
             List<String> nomes_arquivos = new List<String>();
 
