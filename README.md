@@ -11,9 +11,13 @@
 ##### O que este programa faz:
 
  __ (em implementação) __ - Permite identificar a extensão dos arquivos que deseja renomear ou não ;
+ <br/> 
  __ (em implementação) __ - Permite colocar um índice automático (no início ou no final) para os arquivos (aleatórios) que deseja renomear;
+ <br/>
  __ (em implementação) __ - Permite inserir um termo no lugar do nome original do arquivo;
+ <br/>
  __ (em implementação) __ - Permite substituir um termo;
+ <br/>
  __ (em implementação) __ - Permite substituir ou inserir um termo no início, no final;
          
          
