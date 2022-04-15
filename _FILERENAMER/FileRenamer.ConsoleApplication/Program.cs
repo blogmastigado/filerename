@@ -73,9 +73,9 @@ namespace FileRename
         }
 
         public static void ExibirMenuPrincipalDoSistema()
-        {
-            Console.WriteLine("********************************");
+        {            
             Console.WriteLine("O que deseja fazer?: ");
+            Console.WriteLine("");
             Console.WriteLine("Pressione 1 caso queira escolher qual o tipo (EXTENSÃO) de arquivos deseja RENOMEAR.");            
             Console.WriteLine("********************************");
             Console.WriteLine("Pressione 2 para definir qual termo deseja INSERIR ou INSERIR para SUBSTITUIR outro nos nomes dos arquivos.");
@@ -90,7 +90,7 @@ namespace FileRename
             Console.WriteLine("********************************");
             Console.WriteLine("Pressione 7 para ver as configurações que serão usadas na execução do programa.");
             Console.WriteLine("********************************");
-            Console.WriteLine("Pressione 0, para finalizar o programa.");
+            Console.WriteLine("Pressione 0 para finalizar o programa.");
             Console.WriteLine("********************************");
             Console.WriteLine("");
             Console.WriteLine("**************** Observação 1 ********************  **************** Observação 2 ********************");            
