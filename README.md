@@ -10,7 +10,7 @@
 
 ##### O que este programa faz:
 
- __ (em implementação) __ - Permite identificar a extensão dos arquivos que deseja renomear ou não ;
+ - Permite identificar a extensão dos arquivos que deseja renomear ou não ;
  <br/> 
  __ (em implementação) __ - Permite colocar um índice automático (no início ou no final) para os arquivos (aleatórios) que deseja renomear;
  <br/>
