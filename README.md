@@ -23,6 +23,9 @@
  ##### Como usar o programa File Renamer:
 
  1º - Descompacte o arquivo zip/7z no diretório que deseja renomear os arquivos; 
+ <br/>
  2º - Abra o prompt de comando do Windows;
+ <br/>
  3º - Vá até o diretório onde descompactou o programa;
+ <br/>
  4º - Execute o programa FileRenamer.ext;
