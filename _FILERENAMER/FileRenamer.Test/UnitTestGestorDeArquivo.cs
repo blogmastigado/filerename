@@ -1,4 +1,6 @@
 using FileRenamer.Aplicacao;
+using System;
+using System.Collections.Generic;
 using Xunit;
 
 namespace FileRename.Test
@@ -19,11 +21,11 @@ namespace FileRename.Test
         }
                 
         [Theory]
-        [InlineData("nomequalquer")]
+        [InlineData("extensaoqualquer")]
         [InlineData("C:")]
-        public void ObtendoOsArquivosDoDiretorioAtual(string diretorio)
+        public void ObtendoOsArquivosDoDiretorioAtual(string extensao)
         {
-            GestorDeArquivo.ObterTodosOsNomesDeArquivosDeUmDiretorioComCaminhoCompleto(diretorio);
+            List<String> listadenomesdearquivos = GestorDeArquivo.ObterTodosOsNomesDeArquivosPorExtensaoDoDiretorioAtualComCaminhoCompleto(extensao);
         }
     }
 }

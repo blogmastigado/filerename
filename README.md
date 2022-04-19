@@ -10,14 +10,22 @@
 
 ##### O que este programa faz:
 
- - Permite identificar a extensão dos arquivos que deseja renomear ou não ;
+ - Permite renomear todos os arquivos de um diretório ou apenas os que tenham determinad extensão;
  <br/> 
- __ (em implementação) __ - Permite colocar um índice automático (no início ou no final) para os arquivos (aleatórios) que deseja renomear;
+ - Permite substituir carateres ou termos nos nomes de arquivos;
  <br/>
- __ (em implementação) __ - Permite inserir um termo no lugar do nome original do arquivo;
+ - Permite inserir um termo antes de outro no nome do arquivo;
  <br/>
- __ (em implementação) __ - Permite substituir um termo;
+ - Permite inserir um termo depois de outro no nome do arquivo;
  <br/>
- __ (em implementação) __ - Permite substituir ou inserir um termo no início, no final;
-         
-         
+ - Permite remover algum termo do nome do arquivo;
+ 
+ ##### Como usar o programa File Renamer:
+
+ - 1º - Descompacte o arquivo zip/7z no diretório que deseja renomear os arquivos;
+ <br/> 
+ - 2º - Abra o prompt de comando do Windows;
+ <br/>
+ - 3º - Vá até o diretório onde descompactou o programa;
+ <br/>
+ - 4º - Execute o programa FileRenamer.ext;

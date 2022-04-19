@@ -1,0 +1,12 @@
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.Aplicacao\bin\Release\net6.0\FileRenamer.Aplicacao.deps.json
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.Aplicacao\bin\Release\net6.0\FileRenamer.Aplicacao.dll
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.Aplicacao\bin\Release\net6.0\FileRenamer.Aplicacao.pdb
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.Aplicacao\obj\Release\net6.0\FileRenamer.Aplicacao.csproj.AssemblyReference.cache
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.Aplicacao\obj\Release\net6.0\FileRenamer.Aplicacao.GeneratedMSBuildEditorConfig.editorconfig
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.Aplicacao\obj\Release\net6.0\FileRenamer.Aplicacao.AssemblyInfoInputs.cache
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.Aplicacao\obj\Release\net6.0\FileRenamer.Aplicacao.AssemblyInfo.cs
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.Aplicacao\obj\Release\net6.0\FileRenamer.Aplicacao.csproj.CoreCompileInputs.cache
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.Aplicacao\obj\Release\net6.0\FileRenamer.Aplicacao.dll
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.Aplicacao\obj\Release\net6.0\refint\FileRenamer.Aplicacao.dll
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.Aplicacao\obj\Release\net6.0\FileRenamer.Aplicacao.pdb
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.Aplicacao\obj\Release\net6.0\ref\FileRenamer.Aplicacao.dll
