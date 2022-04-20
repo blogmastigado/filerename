@@ -45,7 +45,7 @@ namespace FileRenamer.Aplicacao
             return nomes_de_arquivos;
         }
 
-        public static List<String> ObterTodosOsNomesDeArquivosPorExtensaoDoDiretorioAtualComCaminhoCompleto(String extensao_arquivo)
+        public static List<String> ObterTodosOsNomesDeArquivosDoDiretorioAtualComCaminhoCompletoPorExtensao(String extensao_arquivo)
         {
             // Nome do diretório atual (com caminho completo)
             string nome_diretorio_atual = ObterNomeDoDiretorioAtualComCaminhoCompleto();
@@ -137,7 +137,7 @@ namespace FileRenamer.Aplicacao
 
             if (!String.IsNullOrEmpty(extensao_arquivos))
             {
-                nomes_arquivos = ObterTodosOsNomesDeArquivosPorExtensaoDoDiretorioAtualComCaminhoCompleto(extensao_arquivos);
+                nomes_arquivos = ObterTodosOsNomesDeArquivosDoDiretorioAtualComCaminhoCompletoPorExtensao(extensao_arquivos);
             }
             else
             {
@@ -253,7 +253,7 @@ namespace FileRenamer.Aplicacao
             return nomeoriginalarquivo;
         }
 
-        public static Boolean VerificaSeExisteDeterminadaExtensaoEmArquivoNoDiretorioAtual(string extensao_arquivo)
+        public static Boolean VerificaSeExisteDeterminadaExtensaoEmAlgumArquivoNoDiretorioAtual(string extensao_arquivo)
         {
             List<String> listaarquivos = ObterNomesDosArquivosDoDiretorioAtual();
 
@@ -277,7 +277,7 @@ namespace FileRenamer.Aplicacao
             return encontrou;
         }
 
-        public static Boolean VerificaSeExisteDeterminadaExtensaoDeUmArquivo(string arquivo_atual, string extensao_arquivo)
+        public static Boolean VerificaSeExisteDeterminadaExtensaoDeUmArquivoInformado(string arquivo_atual, string extensao_arquivo)
         {
             Boolean encontrou = false;
 

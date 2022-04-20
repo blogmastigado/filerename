@@ -91,7 +91,7 @@ namespace FileRename
             Console.WriteLine("***********");
             Console.WriteLine("Pressione 4 para INSERIR um termo depois de um TERMO de REFERÊNCIA nos nome(s) do(s) arquivo(s).");            
             Console.WriteLine("***********");
-            Console.WriteLine("Pressione 5 para informar qual termo deseja REMOVER dos nomes dos arquivos, se desejar.");
+            Console.WriteLine("Pressione 5 para informar qual termo deseja REMOVER nos nomes dos arquivos, se desejar.");
             Console.WriteLine("***********");
             Console.WriteLine("Pressione 6 para ver as configurações que serão usadas na execução do programa.");
             Console.WriteLine("***********");
@@ -99,14 +99,16 @@ namespace FileRename
             Console.WriteLine("***********");
             Console.WriteLine("Pressione 8 para RENOMEAR os arquivos do diretório conforme CONFIGURAÇÃO FEITA PREVIAMENTE.");
             Console.WriteLine("***********");
+            Console.WriteLine("Pressione 0 para finalizar o programa.");
+            Console.WriteLine("***********");
             Console.WriteLine("");
             Console.WriteLine("**************** Observação 1 ********************  **************** Observação 2 ********************");            
             Console.WriteLine("* Caso não tenha sido informada a extensão dos   *  * Caso tenha sido informado qual é o termo que   *");
             Console.WriteLine("* arquivos que deseja ALTERAR, serão alterados   *  * deseja SUBSTITUIR nos nomes dos arquivos, é    *");
             Console.WriteLine("* todos os nome de arquivos do diretório.        *  * preciso ter de informar qual termo deseja      *");
             Console.WriteLine("**************************************************  * INSERIR no lugar, caso contrário nada será     *");
-            Console.WriteLine("*     Pressione 0 para finalizar o programa.     *  * substituído.                                   *");
-            Console.WriteLine("**************************************************  **************************************************");            
+            Console.WriteLine("                                                    * substituído.                                   *");
+            Console.WriteLine("                                                    **************************************************");            
             Console.WriteLine("");            
         }
 
