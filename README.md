@@ -10,14 +10,10 @@
 
 ##### O que este programa faz:
 
- - Permite renomear todos os arquivos de um diretório ou apenas os que tenham determinad extensão;
- <br/> 
- - Permite substituir carateres ou termos nos nomes de arquivos;
- <br/>
- - Permite inserir um termo antes de outro no nome do arquivo;
- <br/>
+ - Permite renomear todos os arquivos de um diretório ou apenas os que tenham determinad extensão; 
+ - Permite substituir carateres ou termos nos nomes de arquivos; 
+ - Permite inserir um termo antes de outro no nome do arquivo; 
  - Permite inserir um termo depois de outro no nome do arquivo;
- <br/>
  - Permite remover algum termo do nome do arquivo;
  
  ##### Como usar o programa File Renamer:
