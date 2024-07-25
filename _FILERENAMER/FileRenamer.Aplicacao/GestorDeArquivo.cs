@@ -93,6 +93,17 @@ namespace FileRenamer.Aplicacao
             return nomes_de_arquivos_filtrados_por_extensao;
         }
 
+        public static string ObterExtensaoDeUmArquivo(string apenas_nome_arquivo)
+        {
+            string extensao_arquivo = "";
+
+			string[] nome_arquivo_separado = apenas_nome_arquivo.Split(".");
+
+			extensao_arquivo = nome_arquivo_separado[nome_arquivo_separado.Length - 1];
+
+			return extensao_arquivo;
+        }
+
         public static string ObterNomeDoDiretorioAtualComCaminhoCompleto()
         {
             string nome_diretorio = "";
@@ -126,7 +137,7 @@ namespace FileRenamer.Aplicacao
             }
         }
 
-        public static int SubstituirTermoEmArquivosDeDiretorioAtual(string termo_novo, string termo_a_substituir, string extensao_arquivos)
+        public static int SubstituirTermoEmArquivosDeDiretorioAtual(string termo_referencia, string termo_a_substituir, string extensao_arquivos)
         {
             int nao_processados = 0;
 
@@ -152,7 +163,7 @@ namespace FileRenamer.Aplicacao
                 {
                     if (nome_arquivo_atual.ToLower().Contains(termo_a_substituir.ToLower()))
                     {
-                        string termo_ja_substituido = nome_arquivo_atual.Replace(termo_a_substituir, termo_novo);
+                        string termo_ja_substituido = nome_arquivo_atual.Replace(termo_a_substituir, termo_referencia);
 
                         if (!AlterarNomeDeUmArquivoNoDiretorioAtual(nome_arquivo_atual, termo_ja_substituido))
                         {
@@ -170,7 +181,121 @@ namespace FileRenamer.Aplicacao
             return nao_processados;
         }
 
-        public static Boolean AlterarNomeDeUmArquivoNoDiretorioAtual(string nome_atual, string novo_nome)
+		public static int SubstituirNumeracaoEmArquivosDeDiretorioAtual(string termo_referencia_esquerda, string termo_referencia_direita, int numero_referencia)
+		{
+			int nao_processados = 0;
+
+			List<String> nomes_arquivos = new List<String>();
+
+			// Nome do diretório atual (com caminho completo)
+			string nome_diretorio_atual = ObterNomeDoDiretorioAtualComCaminhoCompleto();
+
+			nomes_arquivos = ObterTodosOsNomesDeArquivosDoDiretorioAtualComCaminhoCompleto();
+
+            nomes_arquivos = nomes_arquivos.OrderByDescending(x => x).ToList(); 
+
+			foreach (string nome_arquivo in nomes_arquivos)
+			{
+				string nome_arquivo_atual = ObterApenasNomeDoArquivo(nome_arquivo);
+
+				try
+				{
+                    if(!String.IsNullOrEmpty(termo_referencia_esquerda) && String.IsNullOrEmpty(termo_referencia_direita))
+                    {
+                        int indice_termo_a_esquerda = nome_arquivo_atual.ToLower().IndexOf(termo_referencia_esquerda.ToLower());
+
+						if (indice_termo_a_esquerda >= 0)
+                        {
+							string string_antes_da_referencia = nome_arquivo_atual.Substring(0, indice_termo_a_esquerda);
+
+							string extensao_arquivo = ObterExtensaoDeUmArquivo(nome_arquivo_atual);
+
+							string termo_ja_substituido = string_antes_da_referencia + termo_referencia_esquerda + numero_referencia.ToString() + "." + extensao_arquivo;
+
+							if (!AlterarNomeDeUmArquivoNoDiretorioAtual(nome_arquivo_atual, termo_ja_substituido))
+							{
+								nao_processados++;
+							}
+							else
+							{
+								numero_referencia--;
+							}
+						}
+						else
+						{
+							nao_processados++;
+						}
+					}
+                    else
+                    {
+						if (String.IsNullOrEmpty(termo_referencia_esquerda) && !String.IsNullOrEmpty(termo_referencia_direita))
+                        {							
+							int indice_termo_a_direita = nome_arquivo_atual.ToLower().IndexOf(termo_referencia_direita.ToLower());
+
+							if (indice_termo_a_direita >= 0)
+                            {
+								string string_a_partir_da_referencia_da_direita = nome_arquivo_atual.Substring(indice_termo_a_direita);
+
+								string termo_ja_substituido = numero_referencia.ToString() + string_a_partir_da_referencia_da_direita;
+
+								if (!AlterarNomeDeUmArquivoNoDiretorioAtual(nome_arquivo_atual, termo_ja_substituido))
+								{
+									nao_processados++;
+								}
+								else
+								{
+									numero_referencia--;
+								}
+							}
+                            else
+                            {
+								nao_processados++;
+							}
+						}
+                        else
+                        {
+							if (!String.IsNullOrEmpty(termo_referencia_esquerda) && !String.IsNullOrEmpty(termo_referencia_direita))
+                            {
+								int indice_termo_a_esquerda = nome_arquivo_atual.ToLower().IndexOf(termo_referencia_esquerda.ToLower());
+
+								int indice_termo_a_direita = nome_arquivo_atual.ToLower().IndexOf(termo_referencia_direita.ToLower());
+
+                                if(indice_termo_a_esquerda >= 0 && indice_termo_a_direita >=0 ) 
+                                {
+									string string_antes_da_referencia = nome_arquivo_atual.Substring(0, indice_termo_a_esquerda);
+
+									string string_a_partir_da_referencia_da_direita = nome_arquivo_atual.Substring(indice_termo_a_direita);
+
+									string termo_ja_substituido = string_antes_da_referencia + termo_referencia_esquerda + numero_referencia.ToString() + string_a_partir_da_referencia_da_direita;
+
+									if (!AlterarNomeDeUmArquivoNoDiretorioAtual(nome_arquivo_atual, termo_ja_substituido))
+									{
+										nao_processados++;
+									}
+                                    else
+                                    {
+										numero_referencia--;
+									}
+								}
+                                else
+                                {
+									nao_processados++;
+								}								
+							}
+						}
+					}
+				}
+				catch (Exception e)
+				{
+					string erro = e.Message;
+					nao_processados++;
+				}
+			}
+
+			return nao_processados;
+		}
+
+		public static Boolean AlterarNomeDeUmArquivoNoDiretorioAtual(string nome_atual, string novo_nome)
         {
             Boolean resultado = false;
 
@@ -306,7 +431,7 @@ namespace FileRenamer.Aplicacao
 
             while (!encontrou && posicao != arquivos_diretorio_atual.Count() - 1)
             {
-                if (arquivos_diretorio_atual[posicao].ToLower().Equals(arquivo_atual))
+                if (arquivos_diretorio_atual[posicao].ToLower().Equals(arquivo_atual.ToLower()))
                 {
                     encontrou = true;
                 }

@@ -10,3 +10,14 @@ D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.Aplicacao\obj
 D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.Aplicacao\obj\Debug\net6.0\refint\FileRenamer.Aplicacao.dll
 D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.Aplicacao\obj\Debug\net6.0\FileRenamer.Aplicacao.pdb
 D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.Aplicacao\obj\Debug\net6.0\ref\FileRenamer.Aplicacao.dll
+D:\_TEMP\filerenamer-master\_FILERENAMER\FileRenamer.Aplicacao\bin\Debug\net6.0\FileRenamer.Aplicacao.deps.json
+D:\_TEMP\filerenamer-master\_FILERENAMER\FileRenamer.Aplicacao\bin\Debug\net6.0\FileRenamer.Aplicacao.dll
+D:\_TEMP\filerenamer-master\_FILERENAMER\FileRenamer.Aplicacao\bin\Debug\net6.0\FileRenamer.Aplicacao.pdb
+D:\_TEMP\filerenamer-master\_FILERENAMER\FileRenamer.Aplicacao\obj\Debug\net6.0\FileRenamer.Aplicacao.GeneratedMSBuildEditorConfig.editorconfig
+D:\_TEMP\filerenamer-master\_FILERENAMER\FileRenamer.Aplicacao\obj\Debug\net6.0\FileRenamer.Aplicacao.AssemblyInfoInputs.cache
+D:\_TEMP\filerenamer-master\_FILERENAMER\FileRenamer.Aplicacao\obj\Debug\net6.0\FileRenamer.Aplicacao.AssemblyInfo.cs
+D:\_TEMP\filerenamer-master\_FILERENAMER\FileRenamer.Aplicacao\obj\Debug\net6.0\FileRenamer.Aplicacao.csproj.CoreCompileInputs.cache
+D:\_TEMP\filerenamer-master\_FILERENAMER\FileRenamer.Aplicacao\obj\Debug\net6.0\FileRenamer.Aplicacao.dll
+D:\_TEMP\filerenamer-master\_FILERENAMER\FileRenamer.Aplicacao\obj\Debug\net6.0\refint\FileRenamer.Aplicacao.dll
+D:\_TEMP\filerenamer-master\_FILERENAMER\FileRenamer.Aplicacao\obj\Debug\net6.0\FileRenamer.Aplicacao.pdb
+D:\_TEMP\filerenamer-master\_FILERENAMER\FileRenamer.Aplicacao\obj\Debug\net6.0\ref\FileRenamer.Aplicacao.dll

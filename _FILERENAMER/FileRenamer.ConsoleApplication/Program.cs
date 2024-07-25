@@ -12,13 +12,17 @@ namespace FileRename
         public static String extensao_arquivos { get; set; }
         public static String termo_a_substituir { get; set; }
         public static String termo_removido { get; set; }
-        public static String termo_novo { get; set; }        
-        public static String termo_anterior_a_referencia { get; set; }
+        public static String termo_referencia { get; set; }
+
+		public static String termo_referencia_esquerda { get; set; }
+		public static String termo_referencia_direita { get; set; }
+		public static String termo_anterior_a_referencia { get; set; }
         public static String termo_referencia_anterior { get; set; }
         public static String termo_posterior_a_referencia { get; set; }
         public static String termo_referencia_posterior { get; set; }
+		public static int numero_referencia { get; set; }
 
-        public static void Main(string[] args)
+		public static void Main(string[] args)
         {
             bool sair = false;
 
@@ -51,12 +55,15 @@ namespace FileRename
             extensao_arquivos = "";
             termo_a_substituir = "";            
             termo_removido = "";
-            termo_novo = "";            
-            termo_anterior_a_referencia = "";
+            termo_referencia = "";
+			termo_referencia_esquerda = "";
+			termo_referencia_direita = "";
+			termo_anterior_a_referencia = "";
             termo_referencia_anterior = "";
             termo_posterior_a_referencia = "";
             termo_referencia_posterior = "";
-        }
+			numero_referencia = 0;
+		}
 
         public static int ExecutarLoopDeEscolhas(int escolha)
         {
@@ -85,29 +92,32 @@ namespace FileRename
             Console.WriteLine("");
             Console.WriteLine("Pressione 1 caso queira escolher qual o tipo (EXTENSÃO) de arquivos deseja RENOMEAR.");            
             Console.WriteLine("***********");
-            Console.WriteLine("Pressione 2 para definir qual termo deseja para SUBSTITUIR outro nos nomes dos arquivos.");            
+            Console.WriteLine("Pressione 2 para NOMEAR um termo (TERMO de REFERÊNCIA) que deseja SUBSTITUIR por outro nos nomes dos arquivos.");            
             Console.WriteLine("***********");
-            Console.WriteLine("Pressione 3 para INSERIR um termo antes de um TERMO de REFERÊNCIA nos nome(s) do(s) arquivo(s).");
+			Console.WriteLine("Pressione 3 para NOMEAR termo(s) (TERMO de REFERÊNCIA à ESQUERDA/DIREITA) que será(ão) usado(s) para identificar uma zona de renumeração descendente nos nome(s) do(s) arquivo(s) (só tem efeito para renumerar arquivos).");
+			Console.WriteLine("***********");
+			Console.WriteLine("Pressione 4 para INSERIR um termo antes de um TERMO de REFERÊNCIA nos nome(s) do(s) arquivo(s).");
             Console.WriteLine("***********");
-            Console.WriteLine("Pressione 4 para INSERIR um termo depois de um TERMO de REFERÊNCIA nos nome(s) do(s) arquivo(s).");            
+            Console.WriteLine("Pressione 5 para INSERIR um termo depois de um TERMO de REFERÊNCIA nos nome(s) do(s) arquivo(s).");            
             Console.WriteLine("***********");
-            Console.WriteLine("Pressione 5 para informar qual termo deseja REMOVER nos nomes dos arquivos, se desejar.");
+            Console.WriteLine("Pressione 6 para INFORMAR qual termo deseja REMOVER nos nomes dos arquivos, se desejar.");            
+			Console.WriteLine("***********");
+			Console.WriteLine("Pressione 7 para VER as configurações que serão usadas na execução do programa.");
             Console.WriteLine("***********");
-            Console.WriteLine("Pressione 6 para ver as configurações que serão usadas na execução do programa.");
+            Console.WriteLine("Pressione 8 para VISUALIZAR todo os arquivos de seu diretório.");
             Console.WriteLine("***********");
-            Console.WriteLine("Pressione 7 para visualizar todo os arquivos de seu diretório.");
+            Console.WriteLine("Pressione 9 para RENOMEAR os arquivos do diretório conforme CONFIGURAÇÃO FEITA PREVIAMENTE.");
             Console.WriteLine("***********");
-            Console.WriteLine("Pressione 8 para RENOMEAR os arquivos do diretório conforme CONFIGURAÇÃO FEITA PREVIAMENTE.");
-            Console.WriteLine("***********");
-            Console.WriteLine("Pressione 0 para finalizar o programa.");
+			Console.WriteLine("Pressione 10 para RENUMERAR de forma descendente os arquivos do diretório conforme NÚMERO de REFERÊNCIA após o TERMO de REFERÊNCIA.");
+			Console.WriteLine("***********");
+			Console.WriteLine("Pressione 0 para FINALIZAR o programa.");
             Console.WriteLine("***********");
             Console.WriteLine("");
             Console.WriteLine("**************** Observação 1 ********************  **************** Observação 2 ********************");            
             Console.WriteLine("* Caso não tenha sido informada a extensão dos   *  * Caso tenha sido informado qual é o termo que   *");
             Console.WriteLine("* arquivos que deseja ALTERAR, serão alterados   *  * deseja SUBSTITUIR nos nomes dos arquivos, é    *");
-            Console.WriteLine("* todos os nome de arquivos do diretório.        *  * preciso ter de informar qual termo deseja      *");
-            Console.WriteLine("**************************************************  * INSERIR no lugar, caso contrário nada será     *");
-            Console.WriteLine("                                                    * substituído.                                   *");
+            Console.WriteLine("* todos os nomes de arquivos do diretório.       *  * preciso informar qual termo deseja INSERIR     *");
+            Console.WriteLine("**************************************************  * no lugar, caso contrário nada será substituído.*");          
             Console.WriteLine("                                                    **************************************************");            
             Console.WriteLine("");            
         }
@@ -131,35 +141,43 @@ namespace FileRename
                         Console.WriteLine("Digite qual a extensão dos arquivos que sofrerão alteração.");
                         ArmazenarExtensaoDosArquivosQueSeraoRenomeados();
                         break;
-                    // Armazenar termo que será usando para inserir ou substituir nos arquivos
+                    // Armazenar termo que será usado para referência na inserção ou substituição de outro termo nos arquivos
                     case 2:
                         ArmazenarNovoTermoParaInsercao();
-                        break;                        
-                    // Armazenar termo para inserido antes de uma referência
-                    case 3:
+                        break;
+					// Armazenar termo de referência da direita e número que será usado para inserir ou substituir números nos arquivos entre ele e o de referência
+					case 3:
+						ArmazenarNovoTermoADireitaParaAlteracaoDeNumerosEntreTermosDeReferencia();
+						break;
+					// Armazenar termo para inserido antes de uma referência
+					case 4:
                         ArmazenarTermoParaInserirAntesDeUmaReferencia();
                         break;
                     // Armazenar termo para inserido depois de uma referência
-                    case 4:
+                    case 5:
                         ArmazenarTermoParaInserirDepoisDeUmaReferencia();
                         break;
                     // Armazenar termo para ser removido
-                    case 5:
+                    case 6:
                         ArmazenarTermoParaSerRemovido();
                         break;
-                    // Visualizar as configurações que serão executadas no sistema
-                    case 6:
+					// Visualizar as configurações que serão executadas no sistema
+					case 7:
                         VisualizarConfiguracoesDeExecucaoDoSistema();
                         break;
                     // Visualizar todos os arquivos de seu diretório
-                    case 7:
+                    case 8:
                         VisualizarArquivosDoDiretorioAtual();
                         break;
                     // Renomear arquivos conforme regras pré configuradas
-                    case 8:
+                    case 9:
                         RenomearArquivos();
                         break;
-                    default:
+					// Renumerar arquivos conforme regras pré configuradas (Termo de Referência 
+					case 10:
+						RenumerarArquivos();
+						break;					
+					default:
                         Console.WriteLine("Opção Incorreta. Escolha uma das opções a seguir.");
                         break;
                 }
@@ -226,21 +244,21 @@ namespace FileRename
 
             Console.WriteLine("Informe qual é o termo que deseja inserir nos nomes dos arquivos do diretório. Se não informar não ocorrerão alterações.");
 
-            termo_novo = Console.ReadLine();
+            termo_referencia = Console.ReadLine();
 
-            if (!String.IsNullOrEmpty(termo_novo))
+            if (!String.IsNullOrEmpty(termo_referencia))
             {
-                Console.WriteLine("Informe qual é o termoa a ser substituído que deseja indicar para ser usada antes do termo informado nos nomes dos arquivos do diretório. Se não informar não ocorrerão alterações.");
+                Console.WriteLine("Informe qual é o termo a ser substituído que deseja indicar para ser usada antes do termo informado nos nomes dos arquivos do diretório. Se não informar não ocorrerão alterações.");
 
                 termo_a_substituir = Console.ReadLine();
 
                 if (!String.IsNullOrEmpty(termo_a_substituir))
                 {
-                    Console.WriteLine("O termo a ser substituído informado foi " + termo_a_substituir + " e " + termo_novo + " entrará em seu lugar. Caso deseja alterá-lo retorne neste menu.");
+                    Console.WriteLine("O termo a ser substituído informado foi " + termo_a_substituir + " e " + termo_referencia + " entrará em seu lugar. Caso deseja alterá-lo retorne neste menu.");
                 }
                 else
                 {
-                    termo_novo = "";
+                    termo_referencia = "";
                     termo_a_substituir = "";
 
                     Console.WriteLine("O termo a ser inserido ou a ser substituído permanece vazio e o programa não inserirá nenhum termo adicional no(s) arquivo(s) do diretório.");
@@ -248,7 +266,7 @@ namespace FileRename
             }
             else
             {
-                termo_novo = "";
+                termo_referencia = "";
                 termo_a_substituir = "";
 
                 Console.WriteLine("O termo a ser inserido ou a ser substituído permanece vazio e o programa não inserirá nenhum termo adicional no(s) arquivo(s) do diretório.");
@@ -259,7 +277,73 @@ namespace FileRename
             Console.ReadKey();
         }
 
-        public static void ArmazenarTermoParaInserirAntesDeUmaReferencia()
+		public static void ArmazenarNovoTermoADireitaParaAlteracaoDeNumerosEntreTermosDeReferencia()
+		{
+			Console.Clear();
+
+			Console.WriteLine("Informe qual é o termo à esquerda do atual número de referência que deseja inserir nos nomes dos arquivos do diretório. Se não informar não ocorrerão alterações neste termo.");
+
+			termo_referencia_esquerda = Console.ReadLine();
+
+			if (!String.IsNullOrEmpty(termo_referencia_esquerda))
+			{
+				Console.WriteLine("Informe qual é o termo à direita que deseja indicar para ser usada depois do número de referência informado nos nomes dos arquivos do diretório. Se não informar não ocorrerão alterações neste termo.");
+
+				termo_referencia_direita = Console.ReadLine();
+
+				if (String.IsNullOrEmpty(termo_referencia_direita))
+				{
+					termo_referencia_direita = "";
+				}
+			}
+            else
+            {
+				Console.WriteLine("Informe qual é o termo à direita que deseja indicar para ser usada depois do número de referência informado nos nomes dos arquivos do diretório. Se não informar não ocorrerão alterações neste termo.");
+
+				termo_referencia_direita = Console.ReadLine();
+
+				if (String.IsNullOrEmpty(termo_referencia_direita))
+				{
+					termo_referencia_esquerda = "";
+					termo_referencia_direita = "";
+				}
+			}
+
+			if (String.IsNullOrEmpty(termo_referencia_esquerda) && String.IsNullOrEmpty(termo_referencia_direita))
+            {
+				termo_referencia_esquerda = "";
+				termo_referencia_direita = "";
+				numero_referencia = 0;
+
+				Console.WriteLine("O termos de referência para realizar a renumeração permanecem vazios e o programa não inserirá nenhum termo adicional no(s) arquivo(s) do diretório.");
+			}
+            else
+            {
+				try
+				{
+					Console.WriteLine("Informe qual é o número de referência deseja indicar para inserir ou substituir os números de forma descendente no arquivos do diretório. Se não informar não ocorrerão alterações neste termo.");
+
+					numero_referencia = Int32.Parse(Console.ReadLine());
+
+					Console.WriteLine("O número de referência informado foi " + numero_referencia + " e será armazenado de forma descendente entre a o termo de refereência da esquerda e da direita. Caso deseja alterá-lo retorne neste menu.");
+				}
+				catch (Exception ex)
+				{
+					Console.WriteLine("O número permanece vazio e já que não foi informado adequadamente, ele permanecerá sendo 0 (zero).");
+				}
+				finally
+				{
+					LimparTelaParaProximaInstrucao();
+				}
+			}
+
+
+			Console.WriteLine("");
+			Console.WriteLine("Pressione uma tecla para continuar.");
+			Console.ReadKey();
+		}
+
+		public static void ArmazenarTermoParaInserirAntesDeUmaReferencia()
         {
             Console.Clear();
 
@@ -353,7 +437,7 @@ namespace FileRename
             LimparTelaParaProximaInstrucao();
         }
 
-        public static void VisualizarConfiguracoesDeExecucaoDoSistema()
+		public static void VisualizarConfiguracoesDeExecucaoDoSistema()
         {
             Console.Clear();
 
@@ -377,11 +461,11 @@ namespace FileRename
             }
 
             // Visualizar se termo a ser inserido foi definido
-            if (!String.IsNullOrEmpty(termo_novo))
+            if (!String.IsNullOrEmpty(termo_referencia))
             {
                 Console.WriteLine("********* Termo a Substituir outro Definido *********");
                 Console.WriteLine("O termo a ser substituido " + termo_a_substituir + " ");
-                Console.WriteLine("e " + termo_novo + " entrará em seu lugar");                
+                Console.WriteLine("e " + termo_referencia + " entrará em seu lugar");                
                 Console.WriteLine("Nessa configuração somente os arquivos que ");
                 Console.WriteLine("possuem esse termo sofrerão alterações.");
                 Console.WriteLine("*************************************************");
@@ -480,18 +564,18 @@ namespace FileRename
             int nao_processados = 0;
 
             // Verifica se é possível substituir termos de arquivos por um novo termo e executar se for possível
-            if (!String.IsNullOrEmpty(termo_novo) && (!String.IsNullOrEmpty(termo_a_substituir)))
+            if (!String.IsNullOrEmpty(termo_referencia) && (!String.IsNullOrEmpty(termo_a_substituir)))
             {
                 if (!String.IsNullOrEmpty(extensao_arquivos))
                 {
-                    nao_processados = GestorDeArquivo.SubstituirTermoEmArquivosDeDiretorioAtual(termo_novo, termo_a_substituir, extensao_arquivos);
+                    nao_processados = GestorDeArquivo.SubstituirTermoEmArquivosDeDiretorioAtual(termo_referencia, termo_a_substituir, extensao_arquivos);
                 }
                 else
                 {
-                    nao_processados = GestorDeArquivo.SubstituirTermoEmArquivosDeDiretorioAtual(termo_novo, termo_a_substituir,"");
+                    nao_processados = GestorDeArquivo.SubstituirTermoEmArquivosDeDiretorioAtual(termo_referencia, termo_a_substituir,"");
                 }
 
-                Console.WriteLine("O termo : " + termo_a_substituir + " foi substuído nos arquivos por " + termo_novo);
+                Console.WriteLine("O termo : " + termo_a_substituir + " foi substuído nos arquivos por " + termo_referencia);
                 Console.WriteLine("A quantidade de arquivos que não foram processados no diretório foi de : " +  nao_processados);
                 VisualizarArquivosDoDiretorioAtual();
 
@@ -562,7 +646,39 @@ namespace FileRename
             }
         }
 
-        protected static void LimparTelaParaProximaInstrucao()
+		public static void RenumerarArquivos()
+		{
+			int nao_processados = 0;
+
+			nao_processados = GestorDeArquivo.SubstituirNumeracaoEmArquivosDeDiretorioAtual(termo_referencia_esquerda, termo_referencia_direita, numero_referencia);
+
+			if (String.IsNullOrEmpty(termo_referencia_esquerda) && !String.IsNullOrEmpty(termo_referencia_direita))
+			{
+				Console.WriteLine("O termo : " + numero_referencia + " foi substuído de forma descendente nos arquivos com referência à direita chamada " + termo_referencia_direita);
+			}
+			else
+			{
+				if (!String.IsNullOrEmpty(termo_referencia_esquerda) && String.IsNullOrEmpty(termo_referencia_direita))
+				{
+					Console.WriteLine("O termo : " + numero_referencia + " foi substuído de forma descendente nos arquivos com referência à esquerda chamada " + termo_referencia_esquerda);
+				}
+				else
+				{
+					if (!String.IsNullOrEmpty(termo_referencia_esquerda) && !String.IsNullOrEmpty(termo_referencia_direita))
+					{
+						Console.WriteLine("O termo : " + numero_referencia + " foi substuído de forma descendente nos arquivos entre " + termo_referencia_esquerda + " e " + termo_referencia_direita);
+					}
+				}
+			}
+
+
+			Console.WriteLine("A quantidade de arquivos que não foram processados no diretório foi de : " + nao_processados);
+			VisualizarArquivosDoDiretorioAtual();
+
+			nao_processados = 0;
+		}
+
+		protected static void LimparTelaParaProximaInstrucao()
         {
             Console.WriteLine("");
             Console.WriteLine("Pressione uma tecla para continuar.");

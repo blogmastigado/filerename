@@ -25,7 +25,7 @@ namespace FileRename.Test
         [InlineData("C:")]
         public void ObtendoOsArquivosDoDiretorioAtual(string extensao)
         {
-            List<String> listadenomesdearquivos = GestorDeArquivo.ObterTodosOsNomesDeArquivosPorExtensaoDoDiretorioAtualComCaminhoCompleto(extensao);
+            List<String> listadenomesdearquivos = GestorDeArquivo.ObterTodosOsNomesDeArquivosDoDiretorioAtualComCaminhoCompleto();
         }
     }
 }
