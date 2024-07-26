@@ -15,6 +15,8 @@
  - Permite inserir um termo antes de outro no nome do arquivo; 
  - Permite inserir um termo depois de outro no nome do arquivo;
  - Permite remover algum termo do nome do arquivo;
+ - Permite ver as configurações que estão sendo usadas no programa;
+ - Permite enumerar arquivos de um diretório conforme um número de referência que ele possuir;
  
  ##### Como usar o programa File Renamer:
 
