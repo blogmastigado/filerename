@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>FileRenamer.ConsoleApplication</id>
+    <version>1.0.0</version>
+    <authors>FileRenamer.ConsoleApplication</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="34805e499259d369303660829bc9785b9a91585f" />
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="FileRenamer.Aplicacao" version="1.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.ConsoleApplication\bin\Release\net6.0\FileRenamer.ConsoleApplication.runtimeconfig.json" target="lib\net6.0\FileRenamer.ConsoleApplication.runtimeconfig.json" />
+    <file src="D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.ConsoleApplication\bin\Release\net6.0\FileRenamer.ConsoleApplication.dll" target="lib\net6.0\FileRenamer.ConsoleApplication.dll" />
+  </files>
+</package>

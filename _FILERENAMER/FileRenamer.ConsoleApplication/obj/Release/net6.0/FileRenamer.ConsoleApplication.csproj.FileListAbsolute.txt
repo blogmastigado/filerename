@@ -10,9 +10,10 @@ D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.ConsoleApplic
 D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.ConsoleApplication\obj\Release\net6.0\FileRenamer.ConsoleApplication.AssemblyInfoInputs.cache
 D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.ConsoleApplication\obj\Release\net6.0\FileRenamer.ConsoleApplication.AssemblyInfo.cs
 D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.ConsoleApplication\obj\Release\net6.0\FileRenamer.ConsoleApplication.csproj.CoreCompileInputs.cache
-D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.ConsoleApplication\obj\Release\net6.0\FileRenamer.ConsoleApplication.csproj.CopyComplete
 D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.ConsoleApplication\obj\Release\net6.0\FileRenamer.ConsoleApplication.dll
 D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.ConsoleApplication\obj\Release\net6.0\refint\FileRenamer.ConsoleApplication.dll
 D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.ConsoleApplication\obj\Release\net6.0\FileRenamer.ConsoleApplication.pdb
 D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.ConsoleApplication\obj\Release\net6.0\FileRenamer.ConsoleApplication.genruntimeconfig.cache
 D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.ConsoleApplication\obj\Release\net6.0\ref\FileRenamer.ConsoleApplication.dll
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.ConsoleApplication\obj\Release\net6.0\FileRenamer.ConsoleApplication.sourcelink.json
+D:\_SISTEMAS\_DOTNET\_PESSOAL\filerenamer\_FILERENAMER\FileRenamer.ConsoleApplication\obj\Release\net6.0\FileRena.B6F61E90.Up2Date

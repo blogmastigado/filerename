@@ -1,0 +1,7 @@
+D:\_TESTEAPP\file_renamer_release_candidate\FileRenamer.ConsoleApplication.exe
+D:\_TESTEAPP\file_renamer_release_candidate\FileRenamer.ConsoleApplication.dll
+D:\_TESTEAPP\file_renamer_release_candidate\FileRenamer.ConsoleApplication.deps.json
+D:\_TESTEAPP\file_renamer_release_candidate\FileRenamer.ConsoleApplication.runtimeconfig.json
+D:\_TESTEAPP\file_renamer_release_candidate\FileRenamer.ConsoleApplication.pdb
+D:\_TESTEAPP\file_renamer_release_candidate\FileRenamer.Aplicacao.dll
+D:\_TESTEAPP\file_renamer_release_candidate\FileRenamer.Aplicacao.pdb
